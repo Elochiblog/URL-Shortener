@@ -3,47 +3,237 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
+    <title>Shortly | URL Shortener</title>
 
     <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
     />
-
-    <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 0.6875rem;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
-    Features Pricing Resources Login Sign Up More than just shorter links Build
-    your brand’s recognition and get detailed insights on how your links are
-    performing. Get Started Shorten a link here... Shorten It! Advanced
-    Statistics Track how your links are performing across the web with our
-    advanced statistics dashboard. Brand Recognition Boost your brand
-    recognition with each click. Generic links don’t mean a thing. Branded links
-    help instil confidence in your content. Detailed Records Gain insights into
-    who is clicking your links. Knowing when and where people engage with your
-    content helps inform better decisions. Fully Customizable Improve brand
-    awareness and content discoverability through customizable links,
-    supercharging audience engagement. Boost your links today Get Started
-    Features Link Shortening Branded Links Analytics Resources Blog Developers
-    Support Company About Our Team Careers Contact
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.svg" alt="Shortly" />
+        </a>
 
-    <footer class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav me-auto ms-lg-4">
+            <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+          </ul>
+
+          <div class="nav-sep d-lg-none"></div>
+
+          <div
+            class="d-flex align-items-center gap-lg-3 flex-column flex-lg-row gap-2"
+          >
+            <a href="#" class="nav-link btn-login-nav px-2">Login</a>
+            <a href="#" class="btn-primary-teal btn-cyan btn-signup-nav"
+              >Sign Up</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center g-0">
+          <div class="col-lg-6 order-lg-1 order-2">
+            <h1 class="hero-title">More than just shorter links</h1>
+            <p class="hero-subtitle">
+              Build your brand's recognition and get detailed insights on how
+              your links are performing.
+            </p>
+            <a href="#shorten" class="btn-primary-teal btn-cyan">Get Started</a>
+          </div>
+
+          <div
+            class="col-lg-5 order-lg-2 order-1 hero-illustration-wrap text-end"
+          >
+            <img
+              src="images/illustration-working.svg"
+              alt="Working illustration"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shorten-section" id="shorten">
+      <div class="container">
+        <div class="shorten-card">
+          <div class="shorten-input-wrap">
+            <div class="shorten-input-group">
+              <input
+                type="url"
+                id="url-input"
+                class="shorten-input"
+                placeholder="Shorten a link here..."
+                aria-label="URL to shorten"
+              />
+              <p class="shorten-error" id="url-error" role="alert">
+                Please add a link
+              </p>
+            </div>
+            <button
+              class="btn-primary-teal btn-shorten"
+              id="shorten-btn"
+              type="button"
+            >
+              Shorten It!
+            </button>
+          </div>
+        </div>
+
+        <div class="results-list" id="results-list" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="container text-center">
+        <h2 class="stats-title">Advanced Statistics</h2>
+        <p class="stats-subtitle">
+          Track how your links are performing across the web with our advanced
+          statistics dashboard.
+        </p>
+
+        <div class="row features-row gx-4">
+          <div class="col-lg-4 col-md-12 mb-5 mb-lg-0">
+            <div class="feature-card">
+              <div class="feature-icon-wrap" aria-hidden="true">
+                <img
+                  src="images/icon-brand-recognition.svg"
+                  alt="Brand Recognition Icon"
+                />
+              </div>
+              <h3 class="feature-title">Brand Recognition</h3>
+              <p class="feature-text">
+                Boost your brand recognition with each click. Generic links
+                don't mean a thing. Branded links help instil confidence in your
+                content.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-12 mb-5 mb-lg-0">
+            <div class="feature-card">
+              <div class="feature-icon-wrap" aria-hidden="true">
+                <img
+                  src="images/icon-detailed-records.svg"
+                  alt="Detailed Records Icon"
+                />
+              </div>
+              <h3 class="feature-title">Detailed Records</h3>
+              <p class="feature-text">
+                Gain insights into who is clicking your links. Knowing when and
+                where people engage with your content helps inform better
+                decisions.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-12">
+            <div class="feature-card">
+              <div class="feature-icon-wrap" aria-hidden="true">
+                <img
+                  src="images/icon-fully-customizable.svg"
+                  alt="Fully Customizable Icon"
+                />
+              </div>
+              <h3 class="feature-title">Fully Customizable</h3>
+              <p class="feature-text">
+                Improve brand awareness and content discoverability through
+                customizable links, supercharging audience engagement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta-title">Boost your links today</h2>
+        <a href="#shorten" class="btn-primary-teal btn-cyan">Get Started</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="row gy-5">
+          <div class="col-lg-3 col-md-12 text-start">
+            <span class="footer-brand d-block">Shortly</span>
+          </div>
+
+          <div class="col-lg-6 col-md-12 footer-cols">
+            <div class="row gy-4">
+              <div class="col-md-4 footer-col-group">
+                <p class="footer-col-title">Features</p>
+                <a href="#" class="footer-link">Link Shortening</a>
+                <a href="#" class="footer-link">Branded Links</a>
+                <a href="#" class="footer-link">Analytics</a>
+              </div>
+              <div class="col-md-4 footer-col-group">
+                <p class="footer-col-title">Resources</p>
+                <a href="#" class="footer-link">Blog</a>
+                <a href="#" class="footer-link">Developers</a>
+                <a href="#" class="footer-link">Support</a>
+              </div>
+              <div class="col-md-4 footer-col-group">
+                <p class="footer-col-title">Company</p>
+                <a href="#" class="footer-link">About</a>
+                <a href="#" class="footer-link">Our Team</a>
+                <a href="#" class="footer-link">Careers</a>
+                <a href="#" class="footer-link">Contact</a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-12 d-flex align-items-start justify-content-lg-end justify-content-center"
+          >
+            <div class="social-icons">
+              <a href="#" class="social-icon" aria-label="Facebook"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Twitter"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Pinterest"
+                ><i class="fa-brands fa-pinterest"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
